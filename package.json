@@ -1,6 +1,6 @@
 {
   "name": "bs-free",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Free monads and other free structures for bucklescript",
   "repository": {
     "type": "git",
