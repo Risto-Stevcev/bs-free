@@ -1,5 +1,8 @@
 open BsEffects;
-open BsMochajs.Mocha;
+open BsMocha.Mocha;
+let before = BsMocha.Async.before;
+open BsChai.Expect.Expect;
+open BsChai.Expect.Combos.End;
 open BsAbstract.Interface;
 let (<.) = BsAbstract.Function.Infix.(<.);
 let id = BsAbstract.Function.Category.id;
@@ -68,7 +71,7 @@ describe("Free Monad", () => {
   module Free_Fn = Free.Function(Affect.Monad);
   let file_contents = ref("");
 
-  before'(done_ => Affect.Infix.({
+  before(done_ => Affect.Infix.({
     Free_Fn.fold_free(interpreter, program) >>=
     (contents => {
       file_contents := contents;
@@ -78,6 +81,6 @@ describe("Free Monad", () => {
   }));
 
   it("should interpret a free program", () => {
-    expect(file_contents^).to_be("hello world!");
+    expect(file_contents^) |> to_be("hello world!");
   })
 });
