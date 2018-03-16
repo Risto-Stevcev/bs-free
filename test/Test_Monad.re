@@ -21,13 +21,13 @@ module Fs = {
 
   let read_file : string => affect(string) = path => (error, success) =>
     read_file_async(path, `utf8, (err, content) => {
-      err != Js.null ? error(Js.Null.to_opt(err)) : success(content);
+      err != Js.null ? error(Js.Null.toOption(err)) : success(content);
     });
 
   let write_file : (string, string) => affect(unit) =
     (path, content) => (error, success) =>
     write_file_async(path, content, `utf8, err => {
-      err != Js.null ? error(Js.Null.to_opt(err)) : success();
+      err != Js.null ? error(Js.Null.toOption(err)) : success();
     });
 };
 
