@@ -23,12 +23,12 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "bs-chai": "^0.3.0",
-    "bs-effects": "^0.8.0",
+    "bs-effects": "^0.9.0",
     "bs-jsverify": "^0.9.0",
     "bs-mocha": "^0.3.0",
     "bs-platform": "^2.2.2"
   },
   "dependencies": {
-    "bs-abstract": "^0.13.0"
+    "bs-abstract": "^0.15.0"
   }
 }
